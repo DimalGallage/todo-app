@@ -25,12 +25,12 @@ const deleteList = (id) => {
 const addCheckitem = (id, labelTxt) => {
   const indexToEdit = todoList.value.findIndex((item) => item.id === id);
   todoList.value[indexToEdit].list.push({ label: labelTxt, status: false });
+  todoList.value[indexToEdit].date = Date.now();
   saveData();
 };
 
 // Function to add a new checkbox to new list
 const addNewListcheckItem = (id, labelTxt) => {
-  console.log("CHCKCK");
   newListObj.value.list.push({ label: labelTxt, status: false });
 };
 
@@ -61,7 +61,7 @@ const addNewlist = (newTodoList) => {
     todoList.value.push({
       id: newListObjId.value,
       title: newTodoList.title,
-      date: newTodoList.date,
+      date: Date.now(),
       list: newTodoList.list,
     });
   } else {
@@ -69,7 +69,7 @@ const addNewlist = (newTodoList) => {
     todoList.value.push({
       id: 1,
       title: newTodoList.title,
-      date: newTodoList.date,
+      date: Date.now(),
       list: newTodoList.list,
     });
   }

@@ -29,6 +29,21 @@ const handleEditSave = () => {
   isEditOpen.value = false;
   console.log(todoObj);
 };
+
+const padZeros = (number, length) => {
+  return number.toString().padStart(length, "0");
+};
+
+const formatDate = (dateObj) => {
+  dateObj = new Date(dateObj);
+  const day = padZeros(dateObj.getDate(), 2);
+  const month = padZeros(dateObj.getMonth() + 1, 2);
+  const year = dateObj.getFullYear();
+  const hours = padZeros(dateObj.getHours(), 2);
+  const minutes = padZeros(dateObj.getMinutes(), 2);
+
+  return day + "-" + month + "-" + year + " at " + minutes + "." + hours;
+};
 </script>
 
 <template>
@@ -36,7 +51,7 @@ const handleEditSave = () => {
     <div class="todo-head">
       <div class="todo-card-title-wrap">
         <h1 class="todo-title">{{ todoObj.title }}</h1>
-        <p class="todo-date">Last update: {{ todoObj.date }}</p>
+        <p class="todo-date">Last update: {{ formatDate(todoObj.date) }}</p>
       </div>
       <div>
         <UButton
