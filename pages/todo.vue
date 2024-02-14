@@ -54,6 +54,10 @@ const openNewListModal = () => {
   newListObjId.value = getNewId();
   newListModal.value = true;
 };
+//function to close new list modal
+const closeNewListModal = () => {
+  newListModal.value = false;
+};
 
 // Function to add a new list
 const addNewlist = (newTodoList) => {
@@ -88,6 +92,8 @@ const saveData = () => {
   localStorage.setItem("todoAppData", JSON.stringify(todoList.value));
 };
 
+//sort
+
 onMounted(async () => {
   if (
     JSON.parse(localStorage.getItem("todoAppData")) != null ||
@@ -117,6 +123,7 @@ onMounted(async () => {
       <EditModal
         v-bind:modelValue="newListModal"
         @save="addNewlist(newListObj)"
+        @close="closeNewListModal()"
         :todoListItem="newListObj"
         :addFunc="addNewListcheckItem"
       />

@@ -11,10 +11,21 @@ const addNewItem = () => {
 </script>
 
 <template>
-  <UModal v-model="props.modelValue">
+  <UModal v-model="props.modelValue" prevent-close>
     <div class="editModal">
       <div>
         <UForm>
+          <div class="closeBtnEdit">
+            <UButton
+              icon="i-heroicons-x-mark-16-solid"
+              size="md"
+              color="red"
+              variant="ghost"
+              :trailing="false"
+              @click="$emit('close')"
+            />
+          </div>
+
           <div class="titleInput">
             <UFormGroup name="listTitle" label="Title">
               <UInput

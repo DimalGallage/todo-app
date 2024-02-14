@@ -30,6 +30,10 @@ const handleEditSave = () => {
   console.log(todoObj);
 };
 
+const closeEditModal = () => {
+  isEditOpen.value = false;
+};
+
 const padZeros = (number, length) => {
   return number.toString().padStart(length, "0");
 };
@@ -42,7 +46,7 @@ const formatDate = (dateObj) => {
   const hours = padZeros(dateObj.getHours(), 2);
   const minutes = padZeros(dateObj.getMinutes(), 2);
 
-  return day + "-" + month + "-" + year + " at " + minutes + "." + hours;
+  return day + "-" + month + "-" + year + " at " + hours + "." + minutes;
 };
 </script>
 
@@ -65,6 +69,7 @@ const formatDate = (dateObj) => {
         <EditModal
           v-bind:modelValue="isEditOpen"
           @save="handleEditSave()"
+          @close="closeEditModal()"
           :todoListItem="todoObj"
           :addFunc="addFunc"
         />
