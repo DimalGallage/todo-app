@@ -12,16 +12,15 @@ const validate = (formState: any): FormError[] => {
   return errors;
 };
 
-const checkUser = (async () => {
-  // let userName = localStorage.getItem("todo-userName");
+onMounted(async () => {
+  let userName = localStorage.getItem("todo-userName");
   if (userName) {
     await navigateTo("/todo");
   }
-})();
+});
 
 async function onSubmit(event: FormSubmitEvent<any>) {
   localStorage.setItem("todo-userName", formState.userName);
-  console.log(formState.userName);
   await navigateTo("/todo");
 }
 </script>
