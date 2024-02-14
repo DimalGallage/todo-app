@@ -13,7 +13,7 @@ const validate = (formState: any): FormError[] => {
 };
 
 const checkUser = (async () => {
-  let userName = localStorage.getItem("todo-userName");
+  // let userName = localStorage.getItem("todo-userName");
   if (userName) {
     await navigateTo("/todo");
   }
