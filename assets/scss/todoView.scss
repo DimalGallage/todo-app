@@ -1,0 +1,69 @@
+.startOverMsg {
+  height: 90vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 600;
+    width: 70%;
+    text-align: center;
+
+    @media screen and (max-width: 992px) {
+      width: 75%;
+    }
+    @media screen and (max-width: 600px) {
+      width: 80%;
+    }
+  }
+
+  button {
+    padding: 1rem;
+    font-size: 1.5rem;
+  }
+}
+
+.floatingBtnWrap {
+  //   position: absolute;
+  //   bottom: 0%;
+  //   right: 0%;
+  //   margin: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 3.5rem;
+  background-color: rgb(26, 26, 26);
+
+  p {
+    font-size: 2rem;
+  }
+
+  .floatingBtnWrapBar {
+    .floatingBtn {
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+  }
+}
+
+.todo-card-wrapper {
+  margin: 1.5rem 3.5rem;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: 992px) {
+    grid-template-columns: auto auto;
+  }
+  @media screen and (max-width: 600px) {
+    grid-template-columns: auto;
+  }
+}

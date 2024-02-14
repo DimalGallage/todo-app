@@ -1,0 +1,18 @@
+@import "header.scss";
+@import "starter.scss";
+@import "todo-card.scss";
+@import "todoview.scss";
+@import "editModal.scss";
+@import "confirmModal.scss";
+
+// * {
+//   background-color: #ffffff;
+//   color: #000000;
+// }
+.brand {
+  color: rgb(0, 238, 99);
+}
+
+body {
+  overflow-x: hidden;
+}

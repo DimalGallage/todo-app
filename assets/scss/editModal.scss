@@ -1,0 +1,59 @@
+.editModal {
+  .titleInput {
+    padding: 2rem 2rem;
+    border-bottom: 0.5px solid #585858;
+
+    label {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .checkInput {
+    padding: 2rem;
+    .checkInputInner {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+
+      .checkInputCheckBox {
+        input {
+          height: 2rem;
+          width: 2rem;
+        }
+      }
+      .checkInputLabel {
+        width: 100%;
+        input {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .addCheckBtn {
+    padding: 0rem 2rem;
+    width: 100%;
+    margin-bottom: 2rem;
+    .addCheckBtnInner {
+      display: flex;
+      width: 100%;
+
+      .addCheckBtnInput {
+        width: 100%;
+      }
+    }
+  }
+
+  .saveBtn {
+    padding: 0rem 2rem 2rem 2rem;
+
+    button {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
